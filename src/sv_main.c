@@ -1495,6 +1495,8 @@ __optimize3 __regparm2 static void SVC_RemoteCommand( netadr_t *from, msg_t *msg
 	// get the command directly, "rcon <pass> <command>" to avoid quoting issues
 	// extract the command by walking
 	// since the cmd formatting can fuckup (amount of spaces), using a dumb step by step parsing
+	
+	cmd_aux+=4; // to make the code below work properly...
 
 	while(cmd_aux[0]==' ')//Skipping space before the password
 		cmd_aux++;
